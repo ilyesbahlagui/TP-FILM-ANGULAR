@@ -1,0 +1,17 @@
+<div class="d-flex flex-column justify-content-center align-items-center mt-4">
+    <form class="d-flex flex-column text-center mx-5 col-3" #formSearchFilm="ngForm"
+        (ngSubmit)="onSubmit(formSearchFilm) ">
+
+
+        <div class="input-group mb-3 d-flex  justify-content-center align-items-center ">
+            <input required type="text" name="titre" class="form-control  " placeholder="Recherche"
+                aria-label="Recherche" aria-describedby="basic-addon2" ngModel>
+            <div class="input-group-append">
+                <button class="btn btn-primary btn-sm p-2" type="submit" [disabled]="formSearchFilm.invalid"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </form>
+    <app-card-film [films$]="film"></app-card-film>
+
+</div>
